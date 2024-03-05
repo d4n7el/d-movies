@@ -12,7 +12,8 @@
       "@components/*": ["./src/components/*"],
       "@locales/*": ["./src/assets/locales/*"],
       "@const/*": ["./src/const/*"],
-      "@routes/*": ["./src/routes/*"]
+      "@routes/*": ["./src/routes/*"],
+      "@interfaces/*": ["./src/interfaces/*"]
     },
 
     /* Bundler mode */
