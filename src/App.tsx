@@ -3,19 +3,24 @@ import { NextUIProvider } from '@nextui-org/react';
 import i18nInstance from '@locales/i18next.init';
 import { FirebaseAppProvider } from 'reactfire';
 import { firebaseConfig } from '../firebase.config';
-import { RouterProvider } from 'react-router-dom';
-import { router } from '@routes/routes';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRouter } from '@routes/routes';
+import { AuthProvider } from './context/auth.context';
 import './App.css';
 
 function App() {
   return (
-    <I18nextProvider i18n={i18nInstance}>
-      <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-        <NextUIProvider>
-          <RouterProvider router={router} />
-        </NextUIProvider>
-      </FirebaseAppProvider>
-    </I18nextProvider>
+    <AuthProvider>
+      <I18nextProvider i18n={i18nInstance}>
+        <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+          <NextUIProvider>
+            <BrowserRouter>
+              <AppRouter />
+            </BrowserRouter>
+          </NextUIProvider>
+        </FirebaseAppProvider>
+      </I18nextProvider>
+    </AuthProvider>
   );
 }
 

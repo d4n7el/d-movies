@@ -1,10 +1,18 @@
 export interface User {
-  name: string;
+  name?: string;
+  email?: string;
+  password?: string;
+}
+
+export interface UserSignUp extends Omit<User, 'name'> {
+  email: string;
+  password: string;
 }
 
 export interface AuthContextProps {
   user: User | null;
   isAuthenticated: boolean;
-  login: (newUser: User) => void;
-  logout: () => void;
+  login: (newUser: UserSignUp) => any;
+  logout: () => Promise<boolean> | null;
+  signUp: (newUser: UserSignUp) => any;
 }

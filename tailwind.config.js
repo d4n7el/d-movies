@@ -31,6 +31,8 @@ export default {
       'black-alpha': 'rgba(47, 47, 47, 0.4)',
       'black-alpha-8': 'rgba(47, 47, 47, 0.8)',
       'black-alpha-9': 'rgba(47, 47, 47, 0.9)',
+      'black-alpha-2': 'rgba(47, 47, 47, 0.2)',
+      'black-alpha-1': 'rgba(47, 47, 47, 0.1)',
       black: 'rgba(14, 21, 21, 1)',
       white: 'rgba(255, 255, 255, 1)',
       transparent: 'transparent',
@@ -47,10 +49,7 @@ export default {
         'white-alpha-light': theme('colors.white-alpha-light'),
       }),
       backgroundImage: {
-        'light-home-bg-default':
-          "url('/src/assets/images/light-home-bg-default.jpeg')",
-        'dark-home-bg-default': "url('/src/assets/images/dark-home.jpeg')",
-        me: "url('/src/assets/images/me.webp')",
+        'login-default': "url('/src/assets/images/bg-login.jpeg')",
       },
       dark: {
         borderColor: (theme) => ({

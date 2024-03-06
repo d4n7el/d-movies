@@ -13,7 +13,8 @@
       "@locales/*": ["./src/assets/locales/*"],
       "@const/*": ["./src/const/*"],
       "@routes/*": ["./src/routes/*"],
-      "@interfaces/*": ["./src/interfaces/*"]
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@context/*": ["./src/context/*"]
     },
 
     /* Bundler mode */
