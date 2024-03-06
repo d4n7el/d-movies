@@ -2,6 +2,9 @@
   "home": "Home",
   "english": "English",
   "spanish": "Spanish",
-  "about": "About",
-  "resume": "Resume"
+  "categories": "Categories",
+  "movies": "Movies",
+  "search": "Search",
+  "setting": "Setting",
+  "logout": "Logout"
 }

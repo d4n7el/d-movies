@@ -2,6 +2,9 @@
   "home": "Inicio",
   "english": "Ingles",
   "spanish": "Español",
-  "about": "Sobre mí",
-  "resume": "Curriculum"
+  "categories": "Categorias",
+  "movies": "Peliculas",
+  "search": "Busqueda",
+  "setting": "Configuración",
+  "logout": "Salir"
 }

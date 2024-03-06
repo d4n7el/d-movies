@@ -1,7 +1,7 @@
 import en from '@locales/en/en.json';
-import home from '@locales/en/portfolio.json';
+import category from '@locales/en/category.json';
 
 export const translationEn = {
   ...en,
-  ...home,
+  ...category,
 };
