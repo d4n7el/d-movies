@@ -1,0 +1,12 @@
+{
+  "loginIntoAccount": "Ingrese a su cuenta",
+  "welcomeBack": "¡Bienvenido de nuevo! Seleccione el método para iniciar sesión.",
+  "continueWithEmail": "O continuar con el correo electrónico.",
+  "email": "Correo",
+  "password": "Contraseña",
+  "login": "Iniciar sesión",
+  "dontHaveAccount": "¿No tienes una cuenta?",
+  "createAnAccount": "Crea una cuenta",
+  "createYourAccount": "Crea tu cuenta",
+  "IHaveAccount": "¿Ya tienes una cuenta?"
+}

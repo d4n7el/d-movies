@@ -6,14 +6,15 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Button,
 } from '@nextui-org/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SelectLanguage } from '@components/nav/selectLanguage';
 import { UserOptions } from '@components/nav/userOptions';
+import { useAuth } from '@context/auth.context';
 
 export const Nav = () => {
+  const { isAuthenticated } = useAuth();
   const [t] = useTranslation('translation');
 
   const menuItems = [
@@ -71,31 +72,38 @@ export const Nav = () => {
           }
         />
       </NavbarContent>
-      <NavbarContent
-        className={`hidden sm:flex gap-4 font-default font-semibold`}
-        justify='center'
-      >
-        {menuItemsElements}
-      </NavbarContent>
+      {isAuthenticated && (
+        <NavbarContent
+          className={`hidden sm:flex gap-4 font-default font-semibold`}
+          justify='center'
+        >
+          {menuItemsElements}
+        </NavbarContent>
+      )}
+
       <NavbarContent justify='end'>
         <SelectLanguage></SelectLanguage>
-        <NavbarItem className=' flex cursor-pointer'>
-          <UserOptions></UserOptions>
-        </NavbarItem>
+        {isAuthenticated && (
+          <NavbarItem className=' flex cursor-pointer'>
+            <UserOptions></UserOptions>
+          </NavbarItem>
+        )}
       </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item) => (
-          <NavbarMenuItem key={`${item.url}`}>
-            <Link
-              className={`w-full text-boston-blue-100`}
-              href={item.url}
-              size='lg'
-            >
-              {item.label}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+      {isAuthenticated && (
+        <NavbarMenu>
+          {menuItems.map((item) => (
+            <NavbarMenuItem key={`${item.url}`}>
+              <Link
+                className={`w-full text-boston-blue-100`}
+                href={item.url}
+                size='lg'
+              >
+                {item.label}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      )}
     </Navbar>
   );
 };

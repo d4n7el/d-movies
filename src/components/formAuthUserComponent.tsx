@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@context/auth.context';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { UserSignUp } from '@interfaces/auth.interface';
+import { useTranslation } from 'react-i18next';
 
 export interface Props {
   submitFormHandle: (newUser: UserSignUp) => any;
 }
 
 export default function FormAuthUserComponent({ submitFormHandle }: Props) {
+  const [t] = useTranslation('translation');
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -72,7 +74,7 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
           className='mb-3'
           classNames={styles}
           type='email'
-          placeholder='Email'
+          placeholder={t('email')}
           name='email'
           labelPlacement='outside'
           required
@@ -91,7 +93,7 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
         <Input
           classNames={styles}
           name='password'
-          placeholder='Password'
+          placeholder={t('password')}
           labelPlacement='outside'
           isInvalid={error.password}
           errorMessage={error.password}
@@ -123,7 +125,7 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
           className='w-full rounded-md mt-10 mb-10 bg-boston-blue-600 text-boston-blue-100'
           onClick={sendForm}
         >
-          Login
+          {t('login')}
         </Button>
       </div>
     </>

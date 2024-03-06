@@ -2,6 +2,7 @@ import { Button } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
 import FormAuthUserComponent from './formAuthUserComponent';
 import { UserSignUp } from 'src/interfaces/auth.interface';
+import { useTranslation } from 'react-i18next';
 
 export interface Props {
   submitFormHandle: (newUser: UserSignUp) => any;
@@ -9,8 +10,9 @@ export interface Props {
 }
 
 export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
+  const [t] = useTranslation('translation');
   return (
-    <div className='container flex m-auto p-10 '>
+    <div className='flex'>
       <div
         className=' bg-white w-full md:w-8/12 lg:w-6/12 h-[90vh] flex justify-center
        items-center shadow-xl rounded-s-lg overflow-hidden border border-black-alpha-1'
@@ -18,14 +20,14 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
         <div className='w-6/12'>
           <div className=''>
             {isLogin && (
-              <strong className='text-3xl'>Log in to your account</strong>
+              <strong className='text-3xl'>{t('loginIntoAccount')}</strong>
             )}
             {!isLogin && (
-              <strong className='text-3xl'>Create your account</strong>
+              <strong className='text-3xl'>{t('createYourAccount')}</strong>
             )}
 
             <small className='mb-6 mt-1 block text-md text-black-alpha'>
-              Welcome Back! Select method to login.
+              {t('welcomeBack')}
             </small>
             <section className='mb-8 flex gap-4'>
               <Button
@@ -47,7 +49,7 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
             </section>
             <section className='border-t-1 border-black-alpha-1 h-4 relative flex justify-center mb-6'>
               <span className='text-xs text-black-alpha-8 bg-white mt-[-8px] px-4'>
-                Or continue with email.
+                {t('continueWithEmail')}
               </span>
             </section>
             <FormAuthUserComponent
@@ -58,9 +60,9 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
                 to='/register'
                 className='mt-6 text-black-alpha-8 text-sm text-center block'
               >
-                Don't have a account ?
+                {t('dontHaveAccount')}
                 <span className='ml-2 text-boston-blue-600 tracking-wide'>
-                  Create an account
+                  {t('createAnAccount')}
                 </span>
               </Link>
             )}
@@ -69,9 +71,9 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
                 to='/login'
                 className='mt-6 text-black-alpha-8 text-sm text-center block'
               >
-                I have a account ?
+                {t('IHaveAccount')}
                 <span className='ml-2 text-boston-blue-600 tracking-wide'>
-                  Sing in
+                  {t('login')}
                 </span>
               </Link>
             )}

@@ -6,6 +6,7 @@ import { firebaseConfig } from '../firebase.config';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRouter } from '@routes/routes';
 import { AuthProvider } from './context/auth.context';
+import { Nav } from 'src/components/nav/navbar';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <NextUIProvider>
             <BrowserRouter>
               <AppRouter />
+              <Nav></Nav>
             </BrowserRouter>
           </NextUIProvider>
         </FirebaseAppProvider>

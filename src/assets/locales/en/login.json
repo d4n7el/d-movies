@@ -1,0 +1,12 @@
+{
+  "loginIntoAccount": "Log in to your account",
+  "welcomeBack": "Welcome Back! Select method to login.",
+  "continueWithEmail": "Or continue with email.",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "dontHaveAccount": "Don't have a account ?",
+  "createAnAccount": "Create an account",
+  "createYourAccount": "Create your account",
+  "IHaveAccount": "I have a account ?"
+}
