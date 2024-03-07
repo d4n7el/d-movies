@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 export interface Props {
   movie: Movie | null;
-  genre: Genre;
+  genre?: Genre;
 }
 
 export const MovieContentModal = ({ movie, genre }: Props) => {
@@ -23,7 +23,7 @@ export const MovieContentModal = ({ movie, genre }: Props) => {
         <div className='h-fit px-10 py-10 '>
           <TitleComponent
             title={movie?.title ?? ''}
-            subTitle={t('currentCategory', { genre: genre.name })}
+            subTitle={genre ? t('currentCategory', { genre: genre.name }) : ''}
           ></TitleComponent>
           <article className='text-boston-blue-50 flex justify-end tracking-wide  '>
             <p className='w-[400px]'>{movie?.overview}</p>

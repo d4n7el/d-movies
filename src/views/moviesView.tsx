@@ -8,21 +8,23 @@ import { TitleComponent } from '@components/titleComponent';
 import { Genre } from '@interfaces/genre.interface';
 import { useTranslation } from 'react-i18next';
 import { MovieContentModal } from '@components/movies/detail/movieContentModal';
+import { getMovies } from '@api/movies.api';
 
 export interface Props {
-  genre: Genre;
+  genre?: Genre;
+  width: string;
 }
 
-export const MoviesView = ({ genre }: Props) => {
+export const MoviesView = ({ genre, width }: Props) => {
   const [t] = useTranslation('translation');
   const [movieDetail, setMovieDetail] = useState<Movie | null>(null);
   const getMoviesCategoriesHandle = async () => {
-    const response = await getMoviesByCategory(genre.id);
+    const response = genre ? await getMoviesByCategory(genre.id) : getMovies();
     return response;
   };
 
   const queryMovies = useQuery({
-    queryKey: ['moviesByCategory', genre.id],
+    queryKey: genre ? ['moviesByCategory', genre.id] : ['movies'],
     queryFn: getMoviesCategoriesHandle,
   });
 
@@ -30,16 +32,16 @@ export const MoviesView = ({ genre }: Props) => {
   const info = queryMovies.data?.data;
 
   return (
-    <>
+    <div className={`flex gap-2 flex-wrap ${width} p-10`}>
       <TitleComponent
-        title={genre.name}
+        title={genre ? genre.name : t('movieList')}
         subTitle={t('infoPages', {
           results: info?.total_results,
           pages: info?.total_pages,
         })}
       ></TitleComponent>
 
-      <div className='flex gap-2 flex-wrap w-12/12 h-[90vh] overflow-scroll'>
+      <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
         {movies?.map((movie) => (
           <MoviesComponent
             key={movie.id}
@@ -59,6 +61,6 @@ export const MoviesView = ({ genre }: Props) => {
           }
         ></ModalComponent>
       </div>
-    </>
+    </div>
   );
 };

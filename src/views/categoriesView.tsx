@@ -36,9 +36,10 @@ export const CategoriesView = () => {
           ></CategoryComponent>
         ))}
       </div>
-      <div className='flex gap-2 flex-wrap w-[88%] p-10'>
-        {category ? <MoviesView genre={category}></MoviesView> : null}
-      </div>
+
+      {category ? (
+        <MoviesView width='w-[88%]' genre={category}></MoviesView>
+      ) : null}
     </div>
   );
 };

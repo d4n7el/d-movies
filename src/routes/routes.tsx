@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { LoginView } from '@views/login/loginView';
 import { RegisterView } from '@views/login/registerView';
 import { CategoriesView } from '@views/categoriesView';
+import { MoviesView } from '@views/moviesView';
 
 export const AppRouter = () => {
   const routes = [
@@ -16,6 +17,10 @@ export const AppRouter = () => {
     {
       path: '/categories',
       element: <CategoriesView></CategoriesView>,
+    },
+    {
+      path: '/movies',
+      element: <MoviesView width='w-[100%]'></MoviesView>,
     },
     {
       path: '/login',

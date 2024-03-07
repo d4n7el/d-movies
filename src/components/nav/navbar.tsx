@@ -26,10 +26,6 @@ export const Nav = () => {
       label: t('movies'),
       url: '/movies',
     },
-    {
-      label: t('search'),
-      url: '/search',
-    },
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
