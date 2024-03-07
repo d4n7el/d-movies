@@ -3,16 +3,15 @@
 @tailwind utilities;
 
 .gradient-opaque {
-  /*background: rgb(0, 0, 0);
-  background: linear-gradient(
-    222deg,
-    rgba(0, 0, 0, 0.9374124649859944) 24%,
-    rgba(26, 101, 135, 0) 43%
-  );*/
   background: rgb(0, 0, 0);
   background: linear-gradient(
     150deg,
     rgba(0, 0, 0, 0.2231267507002801) 19%,
     rgba(22, 22, 25, 1) 66%
   );
+}
+
+.input-search label,
+.input-search input {
+  color: rgb(37 201 235) !important;
 }

@@ -38,6 +38,7 @@ export const MoviesComponent = ({ movie, setMovieDetail }: Props) => {
           backdrop_path ? URL_IMAGES_MOVIE_BD_ + backdrop_path : imgDefault
         }`}
       />
+
       <CardFooter className='absolute bg-black/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between'>
         <div>
           <p className='text-boston-blue-100 text-tiny truncate text-ellipsis overflow-hidden w-[150px]'>

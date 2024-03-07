@@ -1,6 +1,7 @@
 #root {
   max-width: 100%;
 }
-body {
+body,
+html {
   background-color: #000;
 }

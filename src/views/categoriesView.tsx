@@ -26,7 +26,7 @@ export const CategoriesView = () => {
 
   return (
     <div className='flex'>
-      <div className='flex justify-start gap-2 flex-wrap w-[12%] '>
+      <div className='w-[15%] flex gap-2 flex-wrap h-fit'>
         {genres?.map((genre) => (
           <CategoryComponent
             key={genre.id}

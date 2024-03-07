@@ -44,6 +44,7 @@ export default function ModalComponent({
 
   return (
     <Modal
+      classNames={{ closeButton: 'hover:bg-black' }}
       size={size}
       className=' bg-black relative'
       backdrop='blur'
