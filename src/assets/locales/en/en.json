@@ -6,5 +6,7 @@
   "movies": "Movies",
   "search": "Search",
   "setting": "Setting",
-  "logout": "Logout"
+  "logout": "Logout",
+  "showMore": "Show more",
+  "infoPages": "{{results}} results in {{pages}} pages"
 }

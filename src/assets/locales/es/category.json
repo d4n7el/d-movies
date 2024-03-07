@@ -1,1 +1,4 @@
-{}
+{
+  "goToCategory": "Ir a categoria",
+  "currentCategory": "Categoría actual : {{genre}}"
+}

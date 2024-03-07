@@ -1,17 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import { LoginView } from '@views/login/loginView';
 import { RegisterView } from '@views/login/registerView';
-import HomeView from '@views/homeView';
+import { CategoriesView } from '@views/categoriesView';
 
 export const AppRouter = () => {
   const routes = [
     {
       path: '/',
-      element: <HomeView></HomeView>,
+      element: <CategoriesView></CategoriesView>,
     },
     {
       path: '/home',
-      element: <HomeView></HomeView>,
+      element: <CategoriesView></CategoriesView>,
+    },
+    {
+      path: '/categories',
+      element: <CategoriesView></CategoriesView>,
     },
     {
       path: '/login',
@@ -28,10 +32,12 @@ export const AppRouter = () => {
   ];
 
   return (
-    <Routes>
-      {routes.map((route) => (
-        <Route key={route.path} path={route.path} element={route.element} />
-      ))}
-    </Routes>
+    <div className='container m-auto p-20'>
+      <Routes>
+        {routes.map((route) => (
+          <Route key={route.path} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </div>
   );
 };

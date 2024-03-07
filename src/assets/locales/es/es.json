@@ -6,5 +6,7 @@
   "movies": "Peliculas",
   "search": "Busqueda",
   "setting": "Configuración",
-  "logout": "Salir"
+  "logout": "Salir",
+  "showMore": "Ver mas",
+  "infoPages": "{{results}} resultados en {{pages}} páginas"
 }

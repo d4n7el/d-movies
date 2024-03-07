@@ -7,22 +7,26 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppRouter } from '@routes/routes';
 import { AuthProvider } from './context/auth.context';
 import { Nav } from 'src/components/nav/navbar';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <AuthProvider>
-      <I18nextProvider i18n={i18nInstance}>
-        <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-          <NextUIProvider>
-            <BrowserRouter>
-              <AppRouter />
-              <Nav></Nav>
-            </BrowserRouter>
-          </NextUIProvider>
-        </FirebaseAppProvider>
-      </I18nextProvider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <I18nextProvider i18n={i18nInstance}>
+          <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+            <NextUIProvider>
+              <BrowserRouter>
+                <AppRouter />
+                <Nav></Nav>
+              </BrowserRouter>
+            </NextUIProvider>
+          </FirebaseAppProvider>
+        </I18nextProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   );
 }
 

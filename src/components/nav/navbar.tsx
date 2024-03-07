@@ -49,7 +49,7 @@ export const Nav = () => {
 
   return (
     <Navbar
-      className='navbar-default bg-boston-blue-900   shadow-none fixed'
+      className='navbar-default bg-black shadow-none fixed'
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
     >

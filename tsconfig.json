@@ -14,7 +14,9 @@
       "@const/*": ["./src/const/*"],
       "@routes/*": ["./src/routes/*"],
       "@interfaces/*": ["./src/interfaces/*"],
-      "@context/*": ["./src/context/*"]
+      "@context/*": ["./src/context/*"],
+      "@api/*": ["./src/api/*"],
+      "@images/*": ["./src/assets/images/*"]
     },
 
     /* Bundler mode */
