@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 .gradient-opaque {
+  /*background: rgb(0, 0, 0);
+  background: linear-gradient(
+    174deg,
+    rgba(0, 0, 0, 0.3799894957983193) 11%,
+    rgba(0, 0, 0, 1) 79%
+  );*/
   background: rgb(0, 0, 0);
   background: linear-gradient(
-    150deg,
-    rgba(0, 0, 0, 0.2231267507002801) 19%,
-    rgba(22, 22, 25, 1) 66%
+    174deg,
+    rgba(0, 0, 0, 0.3799894957983193) 26%,
+    rgba(0, 0, 0, 1) 79%
   );
 }
 

@@ -37,7 +37,7 @@ export const AppRouter = () => {
   ];
 
   return (
-    <div className='container m-auto p-20'>
+    <div className='m-auto pl-10 pt-24 '>
       <Routes>
         {routes.map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />

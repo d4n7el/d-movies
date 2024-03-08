@@ -8,10 +8,9 @@ import { TitleComponent } from '@components/titleComponent';
 import { Genre } from '@interfaces/genre.interface';
 import { useTranslation } from 'react-i18next';
 import { MovieContentModal } from '@components/movies/detail/movieContentModal';
-import { getMovies } from '@api/movies.api';
 import { SkeletonComponent } from '@components/skeletonComponent';
 import { Input } from '@nextui-org/react';
-import { useDebounce } from 'src/hooks/useDebounce';
+import { useQueryMovies } from '@hooks/useQueryMovies';
 
 export interface Props {
   genre?: Genre;
@@ -22,28 +21,14 @@ export const MoviesView = ({ genre, width }: Props) => {
   const [t] = useTranslation('translation');
   const [movieDetail, setMovieDetail] = useState<Movie | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>();
-  const searchQueryDebounce = useDebounce({ value: searchQuery, delay: 500 });
-
-  const getMoviesCategoriesHandle = async () => {
-    const response = genre
-      ? await getMoviesByCategory(genre.id)
-      : getMovies(searchQuery);
-    return response;
-  };
-
-  const queryMovies = useQuery({
-    queryKey: genre
-      ? ['moviesByCategory', genre.id]
-      : ['movies', searchQueryDebounce],
-    queryFn: getMoviesCategoriesHandle,
-  });
+  const queryMovies = useQueryMovies(genre, searchQuery);
 
   const movies = queryMovies.data?.data.results;
   const info = queryMovies.data?.data;
 
   return (
-    <div className={`${width} p-10`}>
-      <div className='flex items-center gap-2 flex-wrap py-10'>
+    <div className={`${width} p-10 pt-0`}>
+      <div className='flex items-center gap-2 flex-wrap py-10 pt-0'>
         <TitleComponent
           title={genre ? genre.name : t('movieList')}
           subTitle={t('infoPages', {
@@ -53,13 +38,13 @@ export const MoviesView = ({ genre, width }: Props) => {
         ></TitleComponent>
         {!genre && (
           <div
-            className='w-[340px]
-          flex justify-center items-center 
-          text-boston-blue-400 ml-2'
+            className='w-[100%] sm:w-[200px] md:w-[340px]
+            flex justify-center items-center 
+          text-boston-blue-400 ml-2 mt-10 sm:mt-0'
           >
             <Input
               onValueChange={setSearchQuery}
-              className='input-search border-bos '
+              className='input-search'
               label='Search'
               isClearable
               radius='lg'
@@ -101,17 +86,19 @@ export const MoviesView = ({ genre, width }: Props) => {
               setMovieDetail={setMovieDetail}
             ></MoviesComponent>
           ))}
-          <ModalComponent
-            onCloseHandle={setMovieDetail}
-            open={!!movieDetail}
-            size='5xl'
-            content={
-              <MovieContentModal
-                movie={movieDetail}
-                genre={genre}
-              ></MovieContentModal>
-            }
-          ></ModalComponent>
+          {movieDetail && (
+            <ModalComponent
+              onCloseHandle={setMovieDetail}
+              open={!!movieDetail}
+              size='5xl'
+              content={
+                <MovieContentModal
+                  movie={movieDetail}
+                  genre={genre}
+                ></MovieContentModal>
+              }
+            ></ModalComponent>
+          )}
         </div>
       </Suspense>
     </div>

@@ -10,13 +10,13 @@ export interface Props {
 }
 
 export const MoviesComponent = ({ movie, setMovieDetail }: Props) => {
-  const { backdrop_path, title, release_date } = movie;
+  const { poster_path, title, release_date } = movie;
   const [t] = useTranslation('translation');
   const URL_IMAGES_MOVIE_BD_ = import.meta.env.VITE_APP_URL_IMAGES_MOVIE_BD_;
   return (
     <Card
       isFooterBlurred
-      className='w-[200px] h-[200px] col-span-12 sm:col-span-5'
+      className='w-[150px] md:w-[200px] h-[200px] col-span-12 sm:col-span-5'
     >
       <CardHeader className='absolute z-10 top-1 flex-col items-start'>
         <Button
@@ -34,9 +34,7 @@ export const MoviesComponent = ({ movie, setMovieDetail }: Props) => {
         removeWrapper
         alt='Card example background'
         className='z-0 w-full h-full scale-125 -translate-y-6 object-cover'
-        src={`${
-          backdrop_path ? URL_IMAGES_MOVIE_BD_ + backdrop_path : imgDefault
-        }`}
+        src={`${poster_path ? URL_IMAGES_MOVIE_BD_ + poster_path : imgDefault}`}
       />
 
       <CardFooter className='absolute bg-black/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between'>

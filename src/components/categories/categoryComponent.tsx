@@ -18,12 +18,12 @@ export const CategoryComponent = ({
     <Link
       isBlock
       onClick={() => setCategory(genre)}
-      className={`border h-fit rounded-md border-white-alpha-light
-      w-full text-white-alpha flex justify-between cursor-pointer ${
+      className={`border h-fit  rounded-md border-white-alpha-light
+      w-fit text-white-alpha flex justify-between cursor-pointer ${
         id === currentCategory?.id ? ' bg-boston-blue-500' : ''
       }`}
     >
-      {name}
+      <span className='truncate'>{name}</span>
       <span className='icon-[material-symbols--arrow-forward]'></span>
     </Link>
   );
