@@ -1,30 +1,52 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project Name: d-movies
 
-Currently, two official plugins are available:
+#### Build:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Static Badge](https://img.shields.io/badge/npm-v10.2.3-red?logo=npm&style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/nodejs-v20.10.0-%23339933?logo=nodedotjs&style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/react-v18.2.8-%23f44336?logo=react&style=for-the-badge)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+These are the steps to install and run the project locally.
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Git clone SSH `git clone git@github.com:d4n7el/d-movies.git` OR HTTP ` git clone https://github.com/d4n7el/d-movies.git`
+2. Go to the main project folder.
+3. Install dependencies `npm i` OR `yarn install`.
+4. Create .env files `touch .env && touch .env.dev`.
+5. Copy and paste the content of env.template into the created files.
+6. Start the local server `npm run dev` OR `yarn run dev`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Configure environments
+
+- All variables that were created in the .env files must have a value assigned
+
+### Environment Variables Description
+
+This repository utilizes a set of environment variables to configure and access external services. Below are the details of the required environment variables:
+
+- VITE_APP_API_KEY_FIREBASE: This environment variable contains the API key required for authentication and access to Firebase.
+
+- VITE_APP_AUTH_DOMAIN: Defines the authentication domain used by the application.
+
+- VITE_APP_PROJECT_ID: Is the unique identifier of the project in Firebase.
+
+- VITE_APP_STORAGE_BUCKET: Specifies the Firebase storage bucket where files and data can be stored.
+
+- VITE_APP_MESSAGING_SENDER_ID: Sender ID for Firebase Cloud Messaging.
+
+- VITE_APP_ID: Firebase application identifier.
+
+- VITE_APP_BASE_URL_MOVIE_BD: Base URL of The Movie Database (TMDb) API, used to make requests to its movie database.
+
+- VITE_APP_API_KEY_MOVIE_BD: API key required to authenticate and access The Movie Database (TMDb) API.
+
+- VITE_APP_URL_IMAGES_MOVIE_BD: Base URL for accessing movie images hosted on The Movie Database (TMDb).
+
+# NOTE
+
+## If you are the person in charge of carrying out the tests, these variables will be shared in the main email thread.
