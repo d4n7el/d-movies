@@ -12,11 +12,12 @@ export interface Props {
 
 export const useQueryMovies = ({ genre, searchQuery, currentPage }: Props) => {
   const searchQueryDebounce = useDebounce({ value: searchQuery, delay: 500 });
+  const path = searchQuery ? 'search' : 'discover';
 
   const getMoviesCategoriesHandle = async () => {
     const response = genre
       ? await getMoviesByCategory(genre.id, currentPage)
-      : getMovies(currentPage, searchQuery);
+      : getMovies(currentPage, path, searchQuery);
     return response;
   };
 

@@ -10,9 +10,9 @@ const queryApiKey = `?api_key=${API_KEY_MOVIE_BD}`;
 
 export const getMovies = async (
   currentPage: number,
+  path: 'search' | 'discover',
   query?: string
 ): Promise<AxiosResponse<ResponseMovies, ResponseMovies>> => {
-  const path = query ? 'search' : 'discover';
   const url = `${BASE_URL_MOVIE_BD}${path}/movie${queryApiKey}&query=${query}&page=${currentPage}`;
   const response = await getRequest(url);
   return response;
