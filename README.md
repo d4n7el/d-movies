@@ -8,6 +8,15 @@
 ![Static Badge](https://img.shields.io/badge/nodejs-v20.10.0-%23339933?logo=nodedotjs&style=for-the-badge)
 ![Static Badge](https://img.shields.io/badge/react-v18.2.8-%23f44336?logo=react&style=for-the-badge)
 
+![Static Badge](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-squaret&style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/tailwindcss-0F172A?&logo=tailwindcss&style=for-the-badge)
+
+#### integrations
+
+![firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
+
+![tmdb](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/hzwonpdzae4xsy907tmu)
+
 ## Getting Started
 
 These are the steps to install and run the project locally.
@@ -50,3 +59,11 @@ This repository utilizes a set of environment variables to configure and access 
 # NOTE
 
 ## If you are the person in charge of carrying out the tests, these variables will be shared in the main email thread.
+
+## Authentication in the application is obtained through user registration with the username and password method, the authentication methods through Google and Facebook are not developed at the moment.
+
+![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/kjbv3ayubfrezbn7nekb)
+
+![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/yrzvjmtqsybiho0sxytt)
+
+![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/om137v5ffc8c7hxhl8ez)
