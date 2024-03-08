@@ -16,10 +16,5 @@ export const RegisterComponent = () => {
     }
   };
 
-  return (
-    <ContainerAuth
-      isLogin={false}
-      submitFormHandle={submitFormHandle}
-    ></ContainerAuth>
-  );
+  return <ContainerAuth isLogin={false} submitFormHandle={submitFormHandle} />;
 };

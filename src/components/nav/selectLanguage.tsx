@@ -12,8 +12,8 @@ import { SvgEn } from './svg-en.lang';
 export const SelectLanguage = () => {
   const [t, i18n] = useTranslation('translation');
   const languages = [
-    { key: 'es', label: 'spanish', component: <SvgEs></SvgEs> },
-    { key: 'en', label: 'english', component: <SvgEn></SvgEn> },
+    { key: 'es', label: 'spanish', component: <SvgEs /> },
+    { key: 'en', label: 'english', component: <SvgEn /> },
   ];
 
   const DropdownItemLang = languages.map((item) =>
@@ -24,7 +24,7 @@ export const SelectLanguage = () => {
         </span>
       </DropdownItem>
     ) : (
-      <DropdownItem key={item.key} className=' hidden'></DropdownItem>
+      <DropdownItem key={item.key} className=' hidden' />
     )
   );
 
@@ -39,7 +39,7 @@ export const SelectLanguage = () => {
           <span
             className='icon-[heroicons--language-20-solid] h-6 w-6 text-boston-blue-100
              animate-slide-in-left '
-          ></span>
+          />
         </Button>
       </DropdownTrigger>
       <DropdownMenu

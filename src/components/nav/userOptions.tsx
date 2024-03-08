@@ -28,7 +28,7 @@ export const UserOptions = () => {
       key: 'setting',
       label: 'setting',
       icon: (
-        <span className='icon-[material-symbols--settings-b-roll] w-6 h-6'></span>
+        <span className='icon-[material-symbols--settings-b-roll] w-6 h-6' />
       ),
       action: () => {
         redirect('/setting');
@@ -37,7 +37,7 @@ export const UserOptions = () => {
     {
       key: 'logout',
       label: 'logout',
-      icon: <span className='icon-[websymbol--logout] w-6 h-6'></span>,
+      icon: <span className='icon-[websymbol--logout] w-6 h-6' />,
       action: logoutHandle,
     },
   ];
@@ -63,12 +63,12 @@ export const UserOptions = () => {
               className='icon-[mingcute--user-4-fill]
               w-6 h-6 text-boston-blue-100
               animate-spin-clockwise'
-            ></span>
+            />
           }
           endContent={
             <span className='text-boston-blue-100'>{user?.email}</span>
           }
-        ></Button>
+        />
       </DropdownTrigger>
       <DropdownMenu
         variant='faded'

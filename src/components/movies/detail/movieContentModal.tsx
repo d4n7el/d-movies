@@ -33,8 +33,8 @@ export const MovieContentModal = ({ movie, genre }: Props) => {
           })`,
         }}
       >
-        <div className='absolute z-10 left-0 top-0 h-full w-full gradient-opaque'></div>
-        <div className='absolute z-20 left-0 top-0 h-full w-full flex items-end justify-end '></div>
+        <div className='absolute z-10 left-0 top-0 h-full w-full gradient-opaque' />
+        <div className='absolute z-20 left-0 top-0 h-full w-full flex items-end justify-end ' />
       </div>
       <div className='flex items-end mt-[-250px] z-30 sticky'>
         <div className='hidden md:inline-flex ml-10 md:w-[30%] shadow-lg shadow-white-alpha/20 rounded-lg'>
@@ -49,14 +49,14 @@ export const MovieContentModal = ({ movie, genre }: Props) => {
           <TitleComponent
             title={movie?.title ?? ''}
             subTitle={genre ? t('currentCategory', { genre: genre.name }) : ''}
-          ></TitleComponent>
+          />
           <article className='text-boston-blue-50 flex justify-end tracking-wide text-right mt-5'>
             <p className='w-[400px]'>{movie?.overview}</p>
           </article>
           <article className='text-boston-blue-50 flex justify-end mt-6 px-10 gap-1'>
             {movie?.adult && (
               <section className='flex items-center bg-white-alpha  py-1 px-3 rounded-md'>
-                <span className='w-6 h-6 icon-[uil--18-plus] bg-danger-600'></span>
+                <span className='w-6 h-6 icon-[uil--18-plus] bg-danger-600' />
               </section>
             )}
 
@@ -67,7 +67,7 @@ export const MovieContentModal = ({ movie, genre }: Props) => {
               </span>
             </section>
             <section className='flex border py-1 px-3 rounded-md items-center border-white/10'>
-              <span className='icon-[icon-park-solid--like]'></span>
+              <span className='icon-[icon-park-solid--like]' />
               <span className='ml-2 text-boston-blue-400'>
                 {movie?.vote_count?.toString()}
               </span>
@@ -83,7 +83,9 @@ export const MovieContentModal = ({ movie, genre }: Props) => {
             <section className='border py-1 px-3 rounded-md border-white/10 w-fit'>
               <span className='ml-2 text-boston-blue-400'>{t('genre')}:</span>
               {detailMovie?.genres.map((genre) => (
-                <span className='px-1'>{genre.name} /</span>
+                <span key={genre.id} className='px-1'>
+                  {genre.name} /
+                </span>
               ))}
             </section>
           </article>

@@ -14,7 +14,5 @@ export const LoginComponent = () => {
     }
   };
 
-  return (
-    <ContainerAuth isLogin submitFormHandle={submitFormHandle}></ContainerAuth>
-  );
+  return <ContainerAuth isLogin submitFormHandle={submitFormHandle} />;
 };

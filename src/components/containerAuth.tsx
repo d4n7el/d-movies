@@ -33,16 +33,14 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
               <Button
                 className='w-full border-1  border-black-alpha-1 rounded-md py-6'
                 variant='ghost'
-                startContent={
-                  <span className='icon-[logos--google-icon]'></span>
-                }
+                startContent={<span className='icon-[logos--google-icon]' />}
               >
                 Google
               </Button>
               <Button
                 className='w-full border-1  border-black-alpha-1 rounded-md py-6'
                 variant='ghost'
-                startContent={<span className='icon-[logos--facebook]'></span>}
+                startContent={<span className='icon-[logos--facebook]' />}
               >
                 Facebook
               </Button>
@@ -52,9 +50,7 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
                 {t('continueWithEmail')}
               </span>
             </section>
-            <FormAuthUserComponent
-              submitFormHandle={submitFormHandle}
-            ></FormAuthUserComponent>
+            <FormAuthUserComponent submitFormHandle={submitFormHandle} />
             {isLogin && (
               <Link
                 to='/register'
@@ -83,7 +79,7 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
       <div
         className='sm:w-4/12 lg:w-6/12 bg-login-default
         rounded-e-lg overflow-hidden shadow-xl lg:bg-cover bg-center lg:bg-top '
-      ></div>
+      />
     </div>
   );
 };

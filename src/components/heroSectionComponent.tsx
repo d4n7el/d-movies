@@ -6,7 +6,7 @@ export const HeroSectionComponent = () => {
         backgroundImage: `url('https://image.tmdb.org/t/p/original/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg')`,
       }}
     >
-      <div className='absolute h-full w-screen gradient-top-bottom'></div>
+      <div className='absolute h-full w-screen gradient-top-bottom' />
     </div>
   );
 };

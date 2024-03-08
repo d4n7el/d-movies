@@ -38,7 +38,7 @@ export const MoviesView = ({ genre, width }: Props) => {
             results: info?.total_results,
             pages: info?.total_pages,
           })}
-        ></TitleComponent>
+        />
         {!genre && (
           <div
             className='w-[100%] sm:w-[200px] md:w-[340px]
@@ -74,7 +74,7 @@ export const MoviesView = ({ genre, width }: Props) => {
                 ],
               }}
               placeholder='Type to search...'
-              startContent={<span className='icon-[ri--search-2-line]'></span>}
+              startContent={<span className='icon-[ri--search-2-line]' />}
             />
           </div>
         )}
@@ -83,7 +83,7 @@ export const MoviesView = ({ genre, width }: Props) => {
             total={info?.total_pages}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
-          ></PaginationComponent>
+          />
         )}
       </div>
       {!queryMovies.isLoading && (
@@ -93,26 +93,21 @@ export const MoviesView = ({ genre, width }: Props) => {
               key={movie.id}
               movie={movie}
               setMovieDetail={setMovieDetail}
-            ></MoviesComponent>
+            />
           ))}
           {movieDetail && (
             <ModalComponent
               onCloseHandle={setMovieDetail}
               open={!!movieDetail}
               size='5xl'
-              content={
-                <MovieContentModal
-                  movie={movieDetail}
-                  genre={genre}
-                ></MovieContentModal>
-              }
-            ></ModalComponent>
+              content={<MovieContentModal movie={movieDetail} genre={genre} />}
+            />
           )}
         </div>
       )}
       {queryMovies.isLoading && (
         <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
-          <SkeletonComponent items={20}></SkeletonComponent>
+          <SkeletonComponent items={20} />
         </div>
       )}
     </div>

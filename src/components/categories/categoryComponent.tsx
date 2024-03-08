@@ -24,7 +24,7 @@ export const CategoryComponent = ({
       }`}
     >
       <span className='truncate'>{name}</span>
-      <span className='icon-[material-symbols--arrow-forward]'></span>
+      <span className='icon-[material-symbols--arrow-forward]' />
     </Link>
   );
 };

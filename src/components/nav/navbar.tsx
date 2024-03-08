@@ -56,15 +56,15 @@ export const Nav = () => {
               isMenuOpen ? (
                 <span
                   className='icon-[iconamoon--close] text-2xl dark:text-boston-blue-100
-              text-boston-blue-700 animate-expand-horizontally'
-                ></span>
+                text-boston-blue-700 animate-expand-horizontally'
+                />
               ) : (
                 <span
                   className='icon-[tabler--menu] 
-                text-2xl 
-               text-boston-blue-100
-                animate-expand-vertically'
-                ></span>
+                  text-2xl 
+                text-boston-blue-100
+                  animate-expand-vertically'
+                />
               )
             }
           />
@@ -79,10 +79,10 @@ export const Nav = () => {
         )}
 
         <NavbarContent justify='end'>
-          <SelectLanguage></SelectLanguage>
+          <SelectLanguage />
           {isAuthenticated && (
             <NavbarItem className=' flex cursor-pointer'>
-              <UserOptions></UserOptions>
+              <UserOptions />
             </NavbarItem>
           )}
         </NavbarContent>
@@ -102,7 +102,7 @@ export const Nav = () => {
           </NavbarMenu>
         )}
       </Navbar>
-      {isAuthenticated && <HeroSectionComponent></HeroSectionComponent>}
+      {isAuthenticated && <HeroSectionComponent />}
     </div>
   );
 };

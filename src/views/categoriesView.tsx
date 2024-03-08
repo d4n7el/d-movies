@@ -26,13 +26,11 @@ export const CategoriesView = () => {
             genre={genre}
             setCategory={setCategory}
             currentCategory={category}
-          ></CategoryComponent>
+          />
         ))}
       </div>
 
-      {category ? (
-        <MoviesView width='w-[95%] mt-10' genre={category}></MoviesView>
-      ) : null}
+      {category ? <MoviesView width='w-[95%] mt-10' genre={category} /> : null}
     </div>
   );
 };

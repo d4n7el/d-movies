@@ -9,31 +9,31 @@ export const AppRouter = () => {
   const routes = [
     {
       path: '/',
-      element: <CategoriesView></CategoriesView>,
+      element: <CategoriesView />,
     },
     {
       path: '/home',
-      element: <CategoriesView></CategoriesView>,
+      element: <CategoriesView />,
     },
     {
       path: '/categories',
-      element: <CategoriesView></CategoriesView>,
+      element: <CategoriesView />,
     },
     {
       path: '/movies',
-      element: <MoviesView width='w-[100%]'></MoviesView>,
+      element: <MoviesView width='w-[100%]' />,
     },
     {
       path: '/login',
-      element: <LoginView></LoginView>,
+      element: <LoginView />,
     },
     {
       path: '/register',
-      element: <RegisterView></RegisterView>,
+      element: <RegisterView />,
     },
     {
       path: '*',
-      element: <NotFound404></NotFound404>,
+      element: <NotFound404 />,
     },
   ];
 

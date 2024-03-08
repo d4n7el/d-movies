@@ -84,7 +84,7 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
             <span
               className='icon-[material-symbols--mail] m-2
               text-2xl text-default-400 pointer-events-none flex-shrink-0'
-            ></span>
+            />
           }
           onChange={formChangeHandle}
         />
@@ -101,7 +101,7 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
             <span
               className='icon-[solar--lock-password-unlocked-bold] m-2
               text-2xl text-default-400 pointer-events-none flex-shrink-0'
-            ></span>
+            />
           }
           endContent={
             <button
@@ -110,9 +110,9 @@ export default function FormAuthUserComponent({ submitFormHandle }: Props) {
               onClick={toggleVisibility}
             >
               {isVisible ? (
-                <span className='icon-[mdi--eye] text-2xl text-default-400 pointer-events-none mt-1'></span>
+                <span className='icon-[mdi--eye] text-2xl text-default-400 pointer-events-none mt-1' />
               ) : (
-                <span className='icon-[mdi--eye-off] text-2xl text-default-400 pointer-events-none mt-1'></span>
+                <span className='icon-[mdi--eye-off] text-2xl text-default-400 pointer-events-none mt-1' />
               )}
             </button>
           }

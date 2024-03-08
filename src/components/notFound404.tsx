@@ -22,7 +22,7 @@ export const NotFound404 = () => {
             href='/categories'
             className=' bg-white/10 text-boston-blue-500'
             endContent={
-              <span className='icon-[material-symbols--arrow-forward]'></span>
+              <span className='icon-[material-symbols--arrow-forward]' />
             }
           >
             {t('goToMain')}
