@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import FormAuthUserComponent from './formAuthUserComponent';
 import { UserSignUp } from 'src/interfaces/auth.interface';
 import { useTranslation } from 'react-i18next';
+import { TooltipComponent } from '@components/tooltipComponent';
 
 export interface Props {
   submitFormHandle: (newUser: UserSignUp) => any;
@@ -29,21 +30,36 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
             <small className='mb-6 mt-1 block text-md text-black-alpha'>
               {t('welcomeBack')}
             </small>
+
             <section className='mb-8 flex gap-4'>
-              <Button
-                className='w-full border-1  border-black-alpha-1 rounded-md py-6'
-                variant='ghost'
-                startContent={<span className='icon-[logos--google-icon]' />}
-              >
-                Google
-              </Button>
-              <Button
-                className='w-full border-1  border-black-alpha-1 rounded-md py-6'
-                variant='ghost'
-                startContent={<span className='icon-[logos--facebook]' />}
-              >
-                Facebook
-              </Button>
+              <TooltipComponent
+                title='googleAuthentication'
+                description='functionalityDevelopment'
+                content={
+                  <Button
+                    className='w-full border-1  border-black-alpha-1 rounded-md py-6'
+                    variant='ghost'
+                    startContent={
+                      <span className='icon-[logos--google-icon]' />
+                    }
+                  >
+                    Google
+                  </Button>
+                }
+              ></TooltipComponent>
+              <TooltipComponent
+                title='facebookAuthentication'
+                description='functionalityDevelopment'
+                content={
+                  <Button
+                    className='w-full border-1  border-black-alpha-1 rounded-md py-6'
+                    variant='ghost'
+                    startContent={<span className='icon-[logos--facebook]' />}
+                  >
+                    Facebook
+                  </Button>
+                }
+              ></TooltipComponent>
             </section>
             <section className='border-t-1 border-black-alpha-1 h-4 relative flex justify-center mb-6'>
               <span className='text-xs text-black-alpha-8 bg-white mt-[-8px] px-4'>

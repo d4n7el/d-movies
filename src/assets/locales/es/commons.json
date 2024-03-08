@@ -10,5 +10,8 @@
   "showMore": "Ver mas",
   "infoPages": "{{results}} resultados en {{pages}} páginas",
   "goToMain": "Ir a la página principal",
-  "404": "Ups, página no encontrada"
+  "404": "Ups, página no encontrada",
+  "functionalityDevelopment": "La funcionalidad está en desarrollo.",
+  "googleAuthentication": "Autenticación con Google",
+  "facebookAuthentication": "Autenticación con Facebook"
 }
