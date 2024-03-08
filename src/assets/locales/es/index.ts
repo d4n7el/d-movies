@@ -1,10 +1,10 @@
-import es from '@locales/es/es.json';
+import commons from '@locales/es/commons.json';
 import category from '@locales/es/category.json';
 import login from '@locales/es/login.json';
 import movie from '@locales/es/movie.json';
 
 export const translationEs = {
-  ...es,
+  ...commons,
   ...category,
   ...login,
   ...movie,
