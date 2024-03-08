@@ -62,8 +62,8 @@ This repository utilizes a set of environment variables to configure and access 
 
 ## Authentication in the application is obtained through user registration with the username and password method, the authentication methods through Google and Facebook are not developed at the moment.
 
-![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/kjbv3ayubfrezbn7nekb)
+![login-dfzo.dev](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/yrzvjmtqsybiho0sxytt)
 
-![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/yrzvjmtqsybiho0sxytt)
+![movies-dfzo.dev](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/kjbv3ayubfrezbn7nekb)
 
-![Descripción de la imagen](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/om137v5ffc8c7hxhl8ez)
+![detail-dfzo.dev](https://res.cloudinary.com/dboxtzegl/image/upload/f_auto,q_auto/om137v5ffc8c7hxhl8ez)
