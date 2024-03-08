@@ -16,7 +16,7 @@ export const CategoriesView = () => {
   return (
     <div className='flex flex-wrap'>
       <div
-        className='w-[95%] 
+        className='w-[95%] container-category
         flex gap-2  h-fit overflow-scroll 
         overscroll-none'
       >

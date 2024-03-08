@@ -17,7 +17,28 @@
   );
 }
 
+.gradient-top-bottom {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 7%,
+    rgba(0, 0, 0, 0) 33%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
 .input-search label,
 .input-search input {
   color: rgb(37 201 235) !important;
+}
+
+.container-category::-webkit-scrollbar {
+  width: 0px;
+}
+.container-category::-webkit-scrollbar-track {
+  display: none;
+}
+.container-category::-webkit-scrollbar-thumb {
+  display: none;
 }

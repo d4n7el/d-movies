@@ -19,8 +19,8 @@ function App() {
           <FirebaseAppProvider firebaseConfig={firebaseConfig}>
             <NextUIProvider>
               <BrowserRouter>
-                <AppRouter />
                 <Nav></Nav>
+                <AppRouter />
               </BrowserRouter>
             </NextUIProvider>
           </FirebaseAppProvider>

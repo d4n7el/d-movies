@@ -1,5 +1,6 @@
 {
   "goToCategory": "Ir a categoria",
   "currentCategory": "Categoría actual : {{genre}}",
-  "genre": "Genero"
+  "genre": "Genero",
+  "movieList": "Listado de Películas"
 }

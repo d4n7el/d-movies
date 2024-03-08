@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { SelectLanguage } from '@components/nav/selectLanguage';
 import { UserOptions } from '@components/nav/userOptions';
 import { useAuth } from '@context/auth.context';
+import { HeroSectionComponent } from '@components/heroSectionComponent';
 
 export const Nav = () => {
   const { isAuthenticated } = useAuth();
@@ -44,62 +45,65 @@ export const Nav = () => {
   ));
 
   return (
-    <Navbar
-      className='navbar-default bg-black shadow-none fixed'
-      onMenuOpenChange={setIsMenuOpen}
-      isMenuOpen={isMenuOpen}
-    >
-      <NavbarContent className='sm:hidden'>
-        <NavbarMenuToggle
-          icon={
-            isMenuOpen ? (
-              <span
-                className='icon-[iconamoon--close] text-2xl dark:text-boston-blue-100
+    <div>
+      <Navbar
+        className='navbar-default bg-transparent shadow-none fixed'
+        onMenuOpenChange={setIsMenuOpen}
+        isMenuOpen={isMenuOpen}
+      >
+        <NavbarContent className='sm:hidden'>
+          <NavbarMenuToggle
+            icon={
+              isMenuOpen ? (
+                <span
+                  className='icon-[iconamoon--close] text-2xl dark:text-boston-blue-100
               text-boston-blue-700 animate-expand-horizontally'
-              ></span>
-            ) : (
-              <span
-                className='icon-[tabler--menu] 
+                ></span>
+              ) : (
+                <span
+                  className='icon-[tabler--menu] 
                 text-2xl 
                text-boston-blue-100
                 animate-expand-vertically'
-              ></span>
-            )
-          }
-        />
-      </NavbarContent>
-      {isAuthenticated && (
-        <NavbarContent
-          className={`hidden sm:flex gap-4 font-default font-semibold`}
-          justify='center'
-        >
-          {menuItemsElements}
+                ></span>
+              )
+            }
+          />
         </NavbarContent>
-      )}
-
-      <NavbarContent justify='end'>
-        <SelectLanguage></SelectLanguage>
         {isAuthenticated && (
-          <NavbarItem className=' flex cursor-pointer'>
-            <UserOptions></UserOptions>
-          </NavbarItem>
+          <NavbarContent
+            className={`hidden sm:flex gap-4 font-default font-semibold`}
+            justify='center'
+          >
+            {menuItemsElements}
+          </NavbarContent>
         )}
-      </NavbarContent>
-      {isAuthenticated && (
-        <NavbarMenu>
-          {menuItems.map((item) => (
-            <NavbarMenuItem key={`${item.url}`}>
-              <Link
-                className={`w-full text-boston-blue-100`}
-                href={item.url}
-                size='lg'
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      )}
-    </Navbar>
+
+        <NavbarContent justify='end'>
+          <SelectLanguage></SelectLanguage>
+          {isAuthenticated && (
+            <NavbarItem className=' flex cursor-pointer'>
+              <UserOptions></UserOptions>
+            </NavbarItem>
+          )}
+        </NavbarContent>
+        {isAuthenticated && (
+          <NavbarMenu>
+            {menuItems.map((item) => (
+              <NavbarMenuItem key={`${item.url}`}>
+                <Link
+                  className={`w-full text-boston-blue-100`}
+                  href={item.url}
+                  size='lg'
+                >
+                  {item.label}
+                </Link>
+              </NavbarMenuItem>
+            ))}
+          </NavbarMenu>
+        )}
+      </Navbar>
+      <HeroSectionComponent></HeroSectionComponent>
+    </div>
   );
 };

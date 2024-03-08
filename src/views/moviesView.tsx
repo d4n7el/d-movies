@@ -45,7 +45,7 @@ export const MoviesView = ({ genre, width }: Props) => {
             <Input
               onValueChange={setSearchQuery}
               className='input-search'
-              label='Search'
+              label={t('search')}
               isClearable
               radius='lg'
               classNames={{
