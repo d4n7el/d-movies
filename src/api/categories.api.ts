@@ -17,9 +17,10 @@ export const getCategories = async (): Promise<
 };
 
 export const getMoviesByCategory = async (
-  categoryId: number
+  categoryId: number,
+  currentPage: number
 ): Promise<AxiosResponse<ResponseMovies, ResponseMovies>> => {
-  const url = `${BASE_URL_MOVIE_BD}discover/movie${queryApiKey}&with_genres=${categoryId}`;
+  const url = `${BASE_URL_MOVIE_BD}discover/movie${queryApiKey}&with_genres=${categoryId}&page=${currentPage}`;
   const response = await getRequest(url);
   return response;
 };

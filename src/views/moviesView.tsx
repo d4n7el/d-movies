@@ -1,7 +1,5 @@
 import { MoviesComponent } from '@components/movies/movieComponent';
-import { getMoviesByCategory } from 'src/api/categories.api';
-import { useQuery } from '@tanstack/react-query';
-import { useState, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import ModalComponent from '@components/modalComponent';
 import { Movie } from '@interfaces/movies.interface';
 import { TitleComponent } from '@components/titleComponent';
@@ -11,6 +9,7 @@ import { MovieContentModal } from '@components/movies/detail/movieContentModal';
 import { SkeletonComponent } from '@components/skeletonComponent';
 import { Input } from '@nextui-org/react';
 import { useQueryMovies } from '@hooks/useQueryMovies';
+import { PaginationComponent } from '@components/paginationComponent';
 
 export interface Props {
   genre?: Genre;
@@ -19,13 +18,17 @@ export interface Props {
 
 export const MoviesView = ({ genre, width }: Props) => {
   const [t] = useTranslation('translation');
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [movieDetail, setMovieDetail] = useState<Movie | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>();
-  const queryMovies = useQueryMovies(genre, searchQuery);
+  const queryMovies = useQueryMovies({ genre, searchQuery, currentPage });
 
   const movies = queryMovies.data?.data.results;
   const info = queryMovies.data?.data;
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
   return (
     <div className={`${width} p-10 pt-0`}>
       <div className='flex items-center gap-2 flex-wrap py-10 pt-0'>
@@ -75,9 +78,15 @@ export const MoviesView = ({ genre, width }: Props) => {
             />
           </div>
         )}
+        {info?.total_pages && (
+          <PaginationComponent
+            total={info?.total_pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          ></PaginationComponent>
+        )}
       </div>
-
-      <Suspense fallback={<SkeletonComponent></SkeletonComponent>}>
+      {!queryMovies.isLoading && (
         <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
           {movies?.map((movie) => (
             <MoviesComponent
@@ -100,7 +109,12 @@ export const MoviesView = ({ genre, width }: Props) => {
             ></ModalComponent>
           )}
         </div>
-      </Suspense>
+      )}
+      {queryMovies.isLoading && (
+        <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
+          <SkeletonComponent items={20}></SkeletonComponent>
+        </div>
+      )}
     </div>
   );
 };

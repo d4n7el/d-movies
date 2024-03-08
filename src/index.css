@@ -42,3 +42,7 @@
 .container-category::-webkit-scrollbar-thumb {
   display: none;
 }
+
+.container-pagination nav li:last-child {
+  display: none;
+}
