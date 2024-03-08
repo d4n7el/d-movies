@@ -51,7 +51,7 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
               </span>
             </section>
             <FormAuthUserComponent submitFormHandle={submitFormHandle} />
-            {isLogin && (
+            {isLogin ? (
               <Link
                 to='/register'
                 className='mt-6 text-black-alpha-8 text-sm text-center block'
@@ -61,8 +61,7 @@ export const ContainerAuth = ({ submitFormHandle, isLogin }: Props) => {
                   {t('createAnAccount')}
                 </span>
               </Link>
-            )}
-            {!isLogin && (
+            ) : (
               <Link
                 to='/login'
                 className='mt-6 text-black-alpha-8 text-sm text-center block'
