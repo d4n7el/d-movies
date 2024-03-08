@@ -86,7 +86,7 @@ export const MoviesView = ({ genre, width }: Props) => {
           />
         )}
       </div>
-      {!queryMovies.isLoading && (
+      {!queryMovies.isLoading ? (
         <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
           {movies?.map((movie) => (
             <MoviesComponent
@@ -104,8 +104,7 @@ export const MoviesView = ({ genre, width }: Props) => {
             />
           )}
         </div>
-      )}
-      {queryMovies.isLoading && (
+      ) : (
         <div className='flex gap-2 flex-wrap w-12/12 overflow-scroll'>
           <SkeletonComponent items={20} />
         </div>
