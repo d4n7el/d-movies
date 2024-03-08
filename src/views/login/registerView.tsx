@@ -1,5 +1,9 @@
 import { RegisterComponent } from '@components/registerComponent';
 
 export const RegisterView = () => {
-  return <RegisterComponent></RegisterComponent>;
+  return (
+    <div className='container m-auto mt-16'>
+      <RegisterComponent></RegisterComponent>
+    </div>
+  );
 };

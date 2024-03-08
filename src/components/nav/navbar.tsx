@@ -28,7 +28,6 @@ export const Nav = () => {
       url: '/movies',
     },
   ];
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItemsElements = menuItems.map((item) => (
@@ -103,7 +102,7 @@ export const Nav = () => {
           </NavbarMenu>
         )}
       </Navbar>
-      <HeroSectionComponent></HeroSectionComponent>
+      {isAuthenticated && <HeroSectionComponent></HeroSectionComponent>}
     </div>
   );
 };
