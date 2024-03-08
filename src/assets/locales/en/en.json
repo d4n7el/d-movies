@@ -8,5 +8,7 @@
   "setting": "Setting",
   "logout": "Logout",
   "showMore": "Show more",
-  "infoPages": "{{results}} results in {{pages}} pages"
+  "infoPages": "{{results}} results in {{pages}} pages",
+  "goToMain": "Go to the main page",
+  "404": "Oops, page not found"
 }

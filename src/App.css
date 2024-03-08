@@ -1,8 +1,5 @@
-#root {
-  max-width: 100%;
-}
 body,
-html {
+#root {
   background-color: #000;
   min-height: 100vh;
 }

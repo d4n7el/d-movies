@@ -8,5 +8,7 @@
   "setting": "Configuración",
   "logout": "Salir",
   "showMore": "Ver mas",
-  "infoPages": "{{results}} resultados en {{pages}} páginas"
+  "infoPages": "{{results}} resultados en {{pages}} páginas",
+  "goToMain": "Ir a la página principal",
+  "404": "Ups, página no encontrada"
 }

@@ -3,6 +3,7 @@ import { LoginView } from '@views/login/loginView';
 import { RegisterView } from '@views/login/registerView';
 import { CategoriesView } from '@views/categoriesView';
 import { MoviesView } from '@views/moviesView';
+import { NotFound404 } from '@components/notFound404';
 
 export const AppRouter = () => {
   const routes = [
@@ -32,7 +33,7 @@ export const AppRouter = () => {
     },
     {
       path: '*',
-      element: <>404</>,
+      element: <NotFound404></NotFound404>,
     },
   ];
 

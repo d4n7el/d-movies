@@ -6,7 +6,6 @@ export interface Props {
 
 export const SkeletonComponent = ({ items }: Props) => {
   const dynamicItems = Array.from({ length: items }, (_, index) => index + 1);
-  console.log(dynamicItems);
   return (
     <>
       {dynamicItems.map((item) => (
