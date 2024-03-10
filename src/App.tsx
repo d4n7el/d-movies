@@ -14,18 +14,18 @@ function App() {
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <I18nextProvider i18n={i18nInstance}>
-          <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-            <NextUIProvider>
-              <BrowserRouter>
+      <BrowserRouter>
+        <AuthProvider>
+          <I18nextProvider i18n={i18nInstance}>
+            <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+              <NextUIProvider>
                 <Nav />
                 <AppRouter />
-              </BrowserRouter>
-            </NextUIProvider>
-          </FirebaseAppProvider>
-        </I18nextProvider>
-      </AuthProvider>
+              </NextUIProvider>
+            </FirebaseAppProvider>
+          </I18nextProvider>
+        </AuthProvider>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

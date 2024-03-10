@@ -4,15 +4,17 @@ import {
   useState,
   useEffect,
   ReactElement,
+  useMemo,
 } from 'react';
 import { AuthContextProps, User, UserSignUp } from '@interfaces/auth.interface';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  UserCredential,
 } from 'firebase/auth';
 import { auth } from 'firebase.config';
-import { UserCredential } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export interface Props {
   children: ReactElement;
@@ -26,6 +28,7 @@ const AuthContext = createContext<AuthContextProps>({
     return null;
   },
   signUp: () => {},
+  redirect: () => {},
 });
 
 export const useAuth = () => {
@@ -33,6 +36,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: Props) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -43,6 +47,10 @@ export const AuthProvider = ({ children }: Props) => {
       setIsAuthenticated(true);
     }
   }, []);
+
+  const redirect = (path: string = '/login') => {
+    navigate(path);
+  };
 
   const login = async (user: UserSignUp) => {
     const response: UserCredential = await signInWithEmailAndPassword(
@@ -76,11 +84,16 @@ export const AuthProvider = ({ children }: Props) => {
     return true;
   };
 
-  return (
-    <AuthContext.Provider
-      value={{ user, isAuthenticated, login, logout, signUp }}
-    >
-      {children}
-    </AuthContext.Provider>
-  );
+  const value = useMemo(() => {
+    return {
+      user,
+      isAuthenticated,
+      login,
+      logout,
+      signUp,
+      redirect,
+    };
+  }, [isAuthenticated, user]);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

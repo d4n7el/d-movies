@@ -13,10 +13,13 @@ import { SelectLanguage } from '@components/nav/selectLanguage';
 import { UserOptions } from '@components/nav/userOptions';
 import { useAuth } from '@context/auth.context';
 import { HeroSectionComponent } from '@components/heroSectionComponent';
+import { useLocation } from 'react-router-dom';
 
 export const Nav = () => {
   const { isAuthenticated } = useAuth();
   const [t] = useTranslation('translation');
+  let { pathname } = useLocation();
+  const permitShowHeroComponent = !['/login', '/register'].includes(pathname);
 
   const menuItems = [
     {
@@ -102,7 +105,7 @@ export const Nav = () => {
           </NavbarMenu>
         )}
       </Navbar>
-      {isAuthenticated && <HeroSectionComponent />}
+      {permitShowHeroComponent && <HeroSectionComponent />}
     </div>
   );
 };

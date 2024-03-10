@@ -1,7 +1,7 @@
 import { Link } from '@nextui-org/react';
 import { Genre } from '@interfaces/genre.interface';
-import { Dispatch, SetStateAction } from 'react';
-
+import { Dispatch, SetStateAction, useEffect } from 'react';
+import { useAuth } from '@context/auth.context';
 export interface Props {
   genre: Genre;
   setCategory: Dispatch<SetStateAction<Genre | null>>;
@@ -13,7 +13,13 @@ export const CategoryComponent = ({
   setCategory,
   currentCategory,
 }: Props) => {
+  const { isAuthenticated, redirect } = useAuth();
   const { name, id } = genre;
+
+  useEffect(() => {
+    if (!isAuthenticated) redirect('/login');
+  }, [isAuthenticated]);
+
   return (
     <Link
       isBlock

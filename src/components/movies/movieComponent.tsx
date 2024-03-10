@@ -1,8 +1,9 @@
 import { Card, CardHeader, CardFooter, Image, Button } from '@nextui-org/react';
 import { Movie } from '@interfaces/movies.interface';
 import { useTranslation } from 'react-i18next';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import imgDefault from '@images/bg-login.jpeg';
+import { useAuth } from '@context/auth.context';
 
 export interface Props {
   movie: Movie;
@@ -10,9 +11,16 @@ export interface Props {
 }
 
 export const MoviesComponent = ({ movie, setMovieDetail }: Props) => {
+  const { isAuthenticated, redirect } = useAuth();
+
   const { poster_path, title, release_date } = movie;
   const [t] = useTranslation('translation');
   const URL_IMAGES_MOVIE_BD_ = import.meta.env.VITE_APP_URL_IMAGES_MOVIE_BD_;
+
+  useEffect(() => {
+    if (!isAuthenticated) redirect('/login');
+  }, [isAuthenticated]);
+
   return (
     <Card
       isFooterBlurred

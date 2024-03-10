@@ -15,4 +15,5 @@ export interface AuthContextProps {
   login: (newUser: UserSignUp) => any;
   logout: () => Promise<boolean> | null;
   signUp: (newUser: UserSignUp) => any;
+  redirect: (path: string) => void;
 }
