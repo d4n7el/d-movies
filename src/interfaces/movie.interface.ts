@@ -1,6 +1,6 @@
 import { Genre } from './genre.interface';
 
-export interface ResponseMovie {
+export interface MovieResponse {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;

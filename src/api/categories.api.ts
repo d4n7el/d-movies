@@ -1,7 +1,7 @@
 import { getRequest } from '@api/base.api';
 import { AxiosResponse } from 'axios';
 import { GenreResponse } from 'src/interfaces/genre.interface';
-import { ResponseMovies } from '@interfaces/movies.interface';
+import { MoviesResponse } from '@interfaces/movies.interface';
 
 const BASE_URL_MOVIE_BD = import.meta.env.VITE_APP_BASE_URL_MOVIE_BD_;
 const API_KEY_MOVIE_BD = import.meta.env.VITE_APP_API_KEY_MOVIE_BD_;
@@ -19,7 +19,7 @@ export const getCategories = async (): Promise<
 export const getMoviesByCategory = async (
   categoryId: number,
   currentPage: number
-): Promise<AxiosResponse<ResponseMovies, ResponseMovies>> => {
+): Promise<AxiosResponse<MoviesResponse, MoviesResponse>> => {
   const url = `${BASE_URL_MOVIE_BD}discover/movie${queryApiKey}&with_genres=${categoryId}&page=${currentPage}`;
   const response = await getRequest(url);
   return response;

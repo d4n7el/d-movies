@@ -1,7 +1,7 @@
 import { getRequest } from '@api/base.api';
 import { AxiosResponse } from 'axios';
-import { ResponseMovies } from '@interfaces/movies.interface';
-import { ResponseMovie } from '@interfaces/movie.interface';
+import { MoviesResponse } from '@interfaces/movies.interface';
+import { MovieResponse } from '@interfaces/movie.interface';
 
 const BASE_URL_MOVIE_BD = import.meta.env.VITE_APP_BASE_URL_MOVIE_BD_;
 const API_KEY_MOVIE_BD = import.meta.env.VITE_APP_API_KEY_MOVIE_BD_;
@@ -12,7 +12,7 @@ export const getMovies = async (
   currentPage: number,
   path: 'search' | 'discover',
   query?: string
-): Promise<AxiosResponse<ResponseMovies, ResponseMovies>> => {
+): Promise<AxiosResponse<MoviesResponse, MoviesResponse>> => {
   const url = `${BASE_URL_MOVIE_BD}${path}/movie${queryApiKey}&query=${query}&page=${currentPage}`;
   const response = await getRequest(url);
   return response;
@@ -20,7 +20,7 @@ export const getMovies = async (
 
 export const getMovie = async (
   id: number
-): Promise<AxiosResponse<ResponseMovie, ResponseMovie>> => {
+): Promise<AxiosResponse<MovieResponse, MovieResponse>> => {
   const url = `${BASE_URL_MOVIE_BD}movie/${id}${queryApiKey}`;
   const response = await getRequest(url);
   return response;
